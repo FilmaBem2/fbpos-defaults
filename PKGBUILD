@@ -4,7 +4,7 @@ pkgver=22
 pkgrel=2
 epoch=
 pkgdesc="FBP OS Default Settings"
-packager=(Filma Bem <filmabemtv2@gmail.com>)
+packager=('Filma Bem <filmabemtv2@gmail.com>')
 arch=('x86_64')
 url="https://github.com/FilmaBem2/fbpos-wallpapers"
 license=('MIT')
@@ -19,9 +19,23 @@ replaces=()
 backup=()
 options=()
 changelog=
-source=(plasma-desktop.settings)
+source=(plasma-desktop.settings
+        kcminputrc
+        kdeglobals
+        kscreenlockerrc
+        ksplashrc
+        kwinrc
+        plasmarc
+        xsettingsd.conf)
 noextract=()
-md5sums=('56e105210966a5173e5ade219fe7737e')
+md5sums=('afdbb58f29e90280b0caaf6e410ef2a4'
+         '20df043a7c00619072a4ad6c2641a63c'
+         '6009f8fa5d42232b2740dcf6b116e7aa'
+         '65a32833f4d32e3b95c5c1fe9c578613'
+         '74ce8822203fdeeb7e5846ad19633488'
+         'd1d66e90f7c3a99036884092fb3c9c30'
+         'aa6bb29e14ad8a0091357b851c1d9953'
+         '1f3374debb770f3bd3e56ff9fb20ad4e')
 validpgpkeys=()
 
 pkgver() {
@@ -34,19 +48,20 @@ package() {
     mkdir "${pkgdir}/etc/skel"
     mkdir "${pkgdir}/etc/skel/.config"
     mkdir "${pkgdir}/etc/skel/.config/kdedefaults"
+    mkdir "${pkgdir}/etc/skel/.config/xsettingsd"
     mv -f "${srcdir}/plasma-desktop.settings" "${srcdir}/plasma-org.kde.plasma.desktop-appletsrc"
-    cp -R "${srcdir}/plasma-desktop.settings" "${pkgdir}/etc/skell/.config/plasma-org.kde.plasma.desktop-appletsrc"
-    cp -R "${srcdir}/xsettingsd.conf" "${pkgdir}/etc/skel/.config/xsettingsd/xsettingsd.conf"
-    cp -R "${srcdir}/kcminputrc" "${pkgdir}/etc/skel/.config/kcminputrc"
-    cp -R "${srcdir}/kcminputrc" "${pkgdir}/etc/skel/.config/kdedefaults/kcminputrc"
-    cp -R "${srcdir}/kdeglobals" "${pkgdir}/etc/skel/.config/kdeglobals"
-    cp -R "${srcdir}/kdeglobals" "${pkgdir}/etc/skel/.config/kdedefaults/kdeglobals"
-    cp -R "${srcdir}/kscreenlockerrc" "${pkgdir}/etc/skel/.config/kscreenlockerrc"
-    cp -R "${srcdir}/kscreenlockerrc" "${pkgdir}/etc/skel/.config/kdedefaults/kscreenlockerrc"
-    cp -R "${srcdir}/ksplashrc" "${pkgdir}/etc/skel/.config/ksplashrc"
-    cp -R "${srcdir}/ksplashrc" "${pkgdir}/etc/skel/.config/kdedefaults/ksplashrc"
-    cp -R "${srcdir}/kwinrc" "${pkgdir}/etc/skel/.config/kwinrc"
-    cp -R "${srcdir}/kwinrc" "${pkgdir}/etc/skel/.config/kdedefaults/kwinrc"
-    cp -R "${srcdir}/plasmarc" "${pkgdir}/etc/skel/.config/plasmarc"
-    cp -R "${srcdir}/plasmarc" "${pkgdir}/etc/skel/.config/kdedefaults/plasmarc"
+    cp -R "${srcdir}/plasma-org.kde.plasma.desktop-appletsrc" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/xsettingsd.conf" "${pkgdir}/etc/skel/.config/xsettingsd/"
+    cp -R "${srcdir}/kcminputrc" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/kcminputrc" "${pkgdir}/etc/skel/.config/kdedefaults/"
+    cp -R "${srcdir}/kdeglobals" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/kdeglobals" "${pkgdir}/etc/skel/.config/kdedefaults/"
+    cp -R "${srcdir}/kscreenlockerrc" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/kscreenlockerrc" "${pkgdir}/etc/skel/.config/kdedefaults/"
+    cp -R "${srcdir}/ksplashrc" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/ksplashrc" "${pkgdir}/etc/skel/.config/kdedefaults/"
+    cp -R "${srcdir}/kwinrc" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/kwinrc" "${pkgdir}/etc/skel/.config/kdedefaults/"
+    cp -R "${srcdir}/plasmarc" "${pkgdir}/etc/skel/.config/"
+    cp -R "${srcdir}/plasmarc" "${pkgdir}/etc/skel/.config/kdedefaults/"
 }
