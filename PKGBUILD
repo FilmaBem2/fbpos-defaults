@@ -19,23 +19,9 @@ replaces=()
 backup=()
 options=()
 changelog=
-source=(plasma-desktop.settings
-        kcminputrc
-        kdeglobals
-        kscreenlockerrc
-        ksplashrc
-        kwinrc
-        plasmarc
-        xsettingsd.conf)
+source=(fbpos-defaults.zip)
 noextract=()
-md5sums=('afdbb58f29e90280b0caaf6e410ef2a4'
-         '20df043a7c00619072a4ad6c2641a63c'
-         '6009f8fa5d42232b2740dcf6b116e7aa'
-         '65a32833f4d32e3b95c5c1fe9c578613'
-         '74ce8822203fdeeb7e5846ad19633488'
-         'd1d66e90f7c3a99036884092fb3c9c30'
-         'aa6bb29e14ad8a0091357b851c1d9953'
-         '1f3374debb770f3bd3e56ff9fb20ad4e')
+md5sums=('cd56fbd7ae8391743c20699ba8170e31')
 validpgpkeys=()
 
 pkgver() {
