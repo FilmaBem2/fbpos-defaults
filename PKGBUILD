@@ -1,6 +1,6 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 pkgname=fbpos-defaults
-pkgver=r6.4f38a7a
+pkgver=r7.6f01f77
 pkgrel=1
 epoch=
 pkgdesc="FBP OS Default Settings"
@@ -36,6 +36,10 @@ package() {
     mkdir "${pkgdir}/etc/skel/.config/kdedefaults"
     mkdir "${pkgdir}/etc/skel/.config/xsettingsd"
     mkdir "${pkgdir}/etc/pacman.d"
+    mkdir "${pkgdir}/root"
+    mkdir "${pkgdir}/root/.config"
+    mkdir "${pkgdir}/root/.config/kdedefaults"
+    mkdir "${pkgdir}/root/.config/xsettingsd"
     mv -f "${srcdir}/plasma-desktop.settings" "${srcdir}/plasma-org.kde.plasma.desktop-appletsrc"
     cp -R "${srcdir}/plasma-org.kde.plasma.desktop-appletsrc" "${pkgdir}/etc/skel/.config/"
     cp -R "${srcdir}/xsettingsd.conf" "${pkgdir}/etc/skel/.config/xsettingsd/"
