@@ -1,7 +1,7 @@
 # Maintainer: Filma Bem <filmabemtv2@gmail.com>
 pkgname=fbpos-defaults
-pkgver=22
-pkgrel=2
+pkgver=r6.4f38a7a
+pkgrel=1
 epoch=
 pkgdesc="FBP OS Default Settings"
 packager=('Filma Bem <filmabemtv2@gmail.com>')
@@ -21,7 +21,7 @@ options=()
 changelog=
 source=(fbpos-defaults.zip)
 noextract=()
-md5sums=('cd56fbd7ae8391743c20699ba8170e31')
+md5sums=('3098dea87b1857b22626ba60349028a3')
 validpgpkeys=()
 
 pkgver() {
@@ -51,7 +51,21 @@ package() {
     cp -R "${srcdir}/kwinrc" "${pkgdir}/etc/skel/.config/kdedefaults/"
     cp -R "${srcdir}/plasmarc" "${pkgdir}/etc/skel/.config/"
     cp -R "${srcdir}/plasmarc" "${pkgdir}/etc/skel/.config/kdedefaults/"
-    cp -R "${srcdir}fbpmirrors" "${pkgdir}/etc/pacman.d/"
+    cp -R "${srcdir}/plasma-org.kde.plasma.desktop-appletsrc" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/xsettingsd.conf" "${pkgdir}/root/.config/xsettingsd/"
+    cp -R "${srcdir}/kcminputrc" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/kcminputrc" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/kdeglobals" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/kdeglobals" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/kscreenlockerrc" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/kscreenlockerrc" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/ksplashrc" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/ksplashrc" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/kwinrc" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/kwinrc" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/plasmarc" "${pkgdir}/root/.config/"
+    cp -R "${srcdir}/plasmarc" "${pkgdir}/root/.config/kdedefaults/"
+    cp -R "${srcdir}/fbpmirrors" "${pkgdir}/etc/pacman.d/"
     echo "" >> "${pkgdir}/etc/pacman.conf"
     echo "[fbpos-main]" >> "${pkgdir}/etc/pacman.conf"
     echo "SigLevel = Optional TrustAll" >> "${pkgdir}/etc/pacman.conf"
